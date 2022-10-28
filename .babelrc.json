@@ -1,0 +1,25 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "esmodules": true
+        }
+      }
+    ],
+    "@babel/preset-react",
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ],
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-optional-chaining",
+    "transform-react-jsx-source"
+  ]
+}

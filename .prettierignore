@@ -1,0 +1,8 @@
+.yarn
+.next
+dist
+node_modules
+.git
+coverage
+build
+docker-compose*
