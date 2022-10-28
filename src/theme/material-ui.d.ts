@@ -1,13 +1,15 @@
+import { Theme as MuiTheme, ThemeOptions as MuiThemeOptions } from '@mui/material/styles'
+
 declare module '@mui/material/styles' {
   interface BreakpointOverrides {
-    xs: false // removes the `xs` breakpoint
+    xs: false
     sm: false
     md: false
     lg: false
     xl: false
-    mobile: true // adds the `mobile` breakpoint
-    tablet: true
-    laptop: true
-    desktop: true
   }
+
+  interface Theme extends MuiTheme {}
+
+  interface ThemeOptions extends MuiThemeOptions {}
 }
