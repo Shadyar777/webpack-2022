@@ -9,6 +9,6 @@ type ElementByIdType = Element | DocumentFragment
 const root = createRoot(document.getElementById('root') as ElementByIdType)
 root.render(
   <React.StrictMode>
-    <App/>
+    <App />
   </React.StrictMode>
 )
