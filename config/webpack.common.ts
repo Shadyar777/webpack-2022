@@ -21,7 +21,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'WEBPACK-5 | JS',
       template: 'public/index.html', // файл шаблона
-      favicon: 'public/images/example.png',
+      favicon: 'public/images/favicon.png',
       filename: 'index.html', // исходящие файл
       inject: 'head'
     })
