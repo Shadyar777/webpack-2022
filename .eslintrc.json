@@ -25,6 +25,7 @@
     "react-hooks/rules-of-hooks": "warn",
     "react-hooks/exhaustive-deps": "warn",
     "@typescript-eslint/no-explicit-any": ["error", { "ignoreRestArgs": true }],
+    "@typescript-eslint/no-empty-interface": ["error", {"allowSingleExtends": true}],
     "react/prop-types": "off",
     "no-console": ["error", {"allow": ["warn"]}
     ],
