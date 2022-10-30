@@ -1,6 +1,9 @@
 import path from 'path'
 
 module.exports = {
+  // root directory
+  rootDir: path.resolve(__dirname, '../'),
+
   // Source files
   src: path.resolve(__dirname, '../src'),
 
