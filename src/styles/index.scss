@@ -5,3 +5,28 @@
   font-family: 'Inter';
   src: url('../../public/fonts/Inter.ttf');
 }
+
+
+.App {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+input:checked+span {
+  text-decoration: line-through;
+}
+
+span:last-child {
+  color: red;
+  cursor: pointer;
+}
