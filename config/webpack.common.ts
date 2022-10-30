@@ -4,7 +4,7 @@ import { selectEnv } from './webpack.helpers'
 
 const paths = require('./paths')
 
-const envKeys = selectEnv()
+const envKeys = selectEnv('/.env.dev')
 module.exports = {
   // Где webpack смотрит, чтобы начать сборку пакета
   entry: [paths.src + '/index.tsx'],
