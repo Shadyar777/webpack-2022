@@ -6,12 +6,8 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const common = require('./webpack.common')
 
 module.exports = merge(common, {
-  // Установите режим для development или production
   mode: 'development',
-  // Управляйте тем, как создаются исходные карты
   devtool: 'inline-source-map',
-
-  // Поднять сервер для быстрой разработки
   devServer: {
     historyApiFallback: true,
     open: true,
@@ -40,8 +36,8 @@ module.exports = merge(common, {
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
-          plugins: ['react-refresh/babel'],
-        },
+          plugins: ['react-refresh/babel']
+        }
       },
       {
         test: /\.(ts|tsx)$/,
@@ -49,16 +45,16 @@ module.exports = merge(common, {
         use: [
           {
             loader: 'babel-loader',
-            options: { plugins: ['react-refresh/babel'] },
+            options: { plugins: ['react-refresh/babel'] }
           },
           {
             loader: 'ts-loader',
             options: {
-              transpileOnly: true,
-            },
-          },
-        ],
-      },
+              transpileOnly: true
+            }
+          }
+        ]
+      }
     ]
   },
   resolve: {

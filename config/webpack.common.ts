@@ -1,6 +1,10 @@
-const paths = require('./paths')
+import * as webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import { selectEnv } from './webpack.helpers'
 
+const paths = require('./paths')
+
+const envKeys = selectEnv()
 module.exports = {
   // Где webpack смотрит, чтобы начать сборку пакета
   entry: [paths.src + '/index.tsx'],
@@ -24,6 +28,10 @@ module.exports = {
       favicon: 'public/images/favicon.png',
       filename: 'index.html', // исходящие файл
       inject: 'head'
+    }),
+    new webpack.DefinePlugin({
+      ...envKeys,
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     })
   ],
 
