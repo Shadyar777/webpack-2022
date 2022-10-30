@@ -1,12 +1,14 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "node" : true,
+    "commonjs": true
   },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
+//    "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
@@ -24,8 +26,8 @@
   "rules": {
     "react-hooks/rules-of-hooks": "warn",
     "react-hooks/exhaustive-deps": "warn",
-    "@typescript-eslint/no-explicit-any": ["error", { "ignoreRestArgs": true }],
-    "@typescript-eslint/no-empty-interface": ["error", {"allowSingleExtends": true}],
+//    "@typescript-eslint/no-explicit-any": ["error", { "ignoreRestArgs": true }],
+//    "@typescript-eslint/no-empty-interface": ["error", {"allowSingleExtends": true}],
     "react/prop-types": "off",
     "no-console": ["error", {"allow": ["warn"]}
     ],
