@@ -4,10 +4,10 @@ import { SignInParams } from '@/modules/auth/types/types'
 import { AxiosResponse } from 'axios'
 import { AuthState, CredentialsState } from '@/modules/auth/types/interfaces'
 import { auth } from '@/modules/auth/slices/credentials'
-import {AppThunk} from '@/store/configureStore/configureStore'
+import {AppThunk, ThunkApiConfig} from '@/store/configureStore/configureStore'
 import {instance} from '@/store/configureStore/middleware'
 
-export const signIn: AppThunk<void, SignInParams> = createAsyncThunk(
+export const signIn: AppThunk<void, SignInParams> = createAsyncThunk<void, SignInParams, ThunkApiConfig>(
   'auth/sign_in',
   (body, thunkApi) =>
     instance(thunkApi)

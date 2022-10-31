@@ -1,6 +1,6 @@
 import { combineReducers, Reducer } from 'redux'
 import storage from 'redux-persist/lib/storage'
-import authModule from 'src/modules/auth/slices'
+import authModule from '@/modules/auth/slices'
 
 const reducers = combineReducers({
   authModule

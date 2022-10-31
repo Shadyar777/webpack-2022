@@ -69,7 +69,12 @@ module.exports = merge(common, {
   },
   plugins: [
     new ForkTsCheckerWebpackPlugin({
-      async: false
+      typescript: {
+        diagnosticOptions: {
+          semantic: true,
+          syntactic: true,
+        },
+      },
     }),
     // new ESLintPlugin({
     //   extensions: ['js', 'jsx', 'ts', 'tsx'],

@@ -1,6 +1,6 @@
 import * as webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import { selectEnv } from './webpack.helpers'
+import {selectEnv} from './webpack.helpers'
 
 const paths = require('./paths')
 
@@ -31,7 +31,8 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       ...envKeys,
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'process.env.NODE_DEBUG': JSON.stringify(process.env.NODE_DEBUG)
     })
   ],
 
@@ -51,10 +52,10 @@ module.exports = {
       },
 
       // Images: Скопируйте файлы изображений в папку сборки
-      { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
+      {test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource'},
 
       // Fonts and SVGs: Встроенные файлы
-      { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' }
+      {test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline'}
     ]
   },
 
@@ -64,6 +65,17 @@ module.exports = {
     alias: {
       '@': paths.src,
       assets: paths.public
+    },
+    fallback: {
+      'stream': require.resolve('stream-browserify'),
+      'https': require.resolve('https-browserify'),
+      'http': require.resolve('stream-http'),
+      'url': require.resolve('url'),
+      'process': require.resolve('process/browser'),
+      'zlib': require.resolve('browserify-zlib'),
+      'util': require.resolve('util'),
+      'buffer': require.resolve('buffer'),
+      'asset': require.resolve('assert')
     }
   }
 }

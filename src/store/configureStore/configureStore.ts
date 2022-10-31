@@ -1,5 +1,5 @@
 import { AsyncThunk, configureStore } from '@reduxjs/toolkit'
-import { persistStore, Persistor } from 'redux-persist'
+import { Persistor, persistStore } from 'redux-persist'
 import { rootReducer } from '@/store/rootReducer'
 import { CurriedGetDefaultMiddleware } from '@reduxjs/toolkit/src/getDefaultMiddleware'
 

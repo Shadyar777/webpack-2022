@@ -1,7 +1,7 @@
-import React, { FC, useState } from 'react'
-import { SignInParams } from '@/modules/auth/types/types'
-import { useAppDispatch } from '@/store/hooks'
-// import { signIn } from '@/modules/auth/slices/auth'
+import React, {FC, useState} from 'react'
+import {SignInParams} from '@/modules/auth/types/types'
+import {useAppDispatch} from '@/store/hooks'
+import {signIn} from '@/modules/auth/slices/auth'
 
 const SignIn: FC = () => {
   const [state, setState] = useState<SignInParams>({
@@ -11,25 +11,24 @@ const SignIn: FC = () => {
   const dispatch = useAppDispatch()
 
   const onFinish = () => {
-    console.log('dispatch', dispatch)
-    // dispatch(signIn(state))
+    console.log('dispatch', dispatch(signIn(state)))
   }
 
   return (
     <div>
       <input
-        type='text'
+        type="text"
         onChange={event => {
-          setState({ ...state, username: event.target.value })
+          setState({...state, username: event.target.value})
         }}
       />
       <input
-        type='text'
+        type="text"
         onChange={event => {
-          setState({ ...state, password: event.target.value })
+          setState({...state, password: event.target.value})
         }}
       />
-      <input type='button' onClick={onFinish} />
+      <input type="button" onClick={onFinish}/>
     </div>
   )
 }
